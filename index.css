@@ -2,7 +2,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family:'Segoe UI',sans-serif;
 }
 
 body{
@@ -11,12 +11,13 @@ body{
     justify-content:center;
     align-items:center;
     background:linear-gradient(135deg,#dff6ff,#e8dcff);
+    padding:20px;
 }
 
 .container{
-    width:450px;
-    background:rgba(255,255,255,0.9);
-    backdrop-filter:blur(10px);
+    width:100%;
+    max-width:500px;
+    background:rgba(255,255,255,0.95);
     border-radius:25px;
     padding:35px;
     box-shadow:0 15px 40px rgba(120,120,255,0.2);
@@ -29,32 +30,63 @@ body{
 
 .logo h1{
     color:#6a5acd;
-    font-size:32px;
 }
 
 .logo p{
     color:#5f8dd3;
-    margin-top:5px;
 }
 
 form{
     display:flex;
     flex-direction:column;
-    gap:15px;
+    gap:12px;
 }
 
-input, select{
+label{
+    font-size:14px;
+    font-weight:600;
+    color:#444;
+}
+
+input,
+select{
     padding:14px;
     border:none;
     border-radius:12px;
     background:#f4f8ff;
     outline:none;
     font-size:15px;
+    transition:0.3s;
+}
+
+input:hover,
+select:hover{
+    background:#eef4ff;
 }
 
 input:focus,
 select:focus{
     border:2px solid #9a7dff;
+}
+
+.password-box{
+    position:relative;
+}
+
+.password-box input{
+    width:100%;
+}
+
+.password-box span{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+}
+
+#strength{
+    font-weight:bold;
 }
 
 button{
@@ -67,12 +99,25 @@ button{
     font-size:16px;
     font-weight:bold;
     cursor:pointer;
-    transition:0.3s;
+    transition:.3s;
 }
 
 button:hover{
     transform:translateY(-2px);
-    box-shadow:0 10px 25px rgba(120,120,255,0.3);
+    box-shadow:0 10px 25px rgba(120,120,255,.3);
+}
+
+.terms{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    margin-top:5px;
+}
+
+#successMessage{
+    margin-top:20px;
+    text-align:center;
+    font-weight:bold;
 }
 
 .footer{
@@ -80,4 +125,12 @@ button:hover{
     margin-top:20px;
     color:#777;
     font-size:13px;
+}
+
+.success{
+    color:green;
+}
+
+.error{
+    color:red;
 }
